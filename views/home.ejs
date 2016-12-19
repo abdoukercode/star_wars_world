@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <% include partials/head %>
+
+  </head>
+  <body>
+        <% include partials/header %>
+        <div id="hero-image">
+            <h1 id="hero-title"><%= title %></h1>
+        </div>
+
+        <div id="posters-wrapper" class="content-padding clearfix">
+           
+             <%  for ( movie of movies) { %>
+              <a href="/star_wars_episode/<%= movie.episode_number %>">
+                <div class="poster">
+                    <img src="/assets/images/<%= movie.poster %>" alt="" class ="img-responsive">
+                    <div class="poster-info-overlay">
+                        <h3><%= movie.title %></h3>
+                        <h4> View More <i class="fa fa-arrow-right"></i></h4>
+                    </div>
+                    </a>
+               </div>
+            <% } %>
+
+        </div>
+
+       
+
+
+    <% include partials/footer %>
+    <% include partials/script %>
+
+  </body>
+</html>
+
